@@ -21,6 +21,8 @@ let mistakes = 0;
 let guessed = [];
 let wordStatus = null;
 
+
+// eny functions
 function randomWord() {
     answer = programming_languages[Math.floor(Math.random() * programming_languages.length)];
 
