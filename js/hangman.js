@@ -29,7 +29,7 @@ function generateButtons() {
     let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
         `
       <button
-      class="btn btn-lg btn-primary m-2"
+      class="btn btn-hover color-11 btn-lg  m-2"
       id = '`+ letter + `'
       onClick="handleGuess('`+ letter + `')"
       >
@@ -49,29 +49,35 @@ function handleGuess(chosenLetter){
         guessedWord();
         chekIfgameWon()
         //correct image
+        
+//document.getElementById('hangmanPic').src = './images/goodJobgif.gif'
+document.getElementById('hangmanPic').src='./images/ok.png'
     }else if(answer.indexOf(chosenLetter) === -1) {
         mistakes++;
         updateMistakes();
         chekIfgameLost();
-        updateHangmanPicture()
+        // updateHangmanPicture()
+        document.getElementById('hangmanPic').src='./images/x.png'
     }
+    
+console.log(mistakes)
 }
-function updateHangmanPicture(){
+//function updateHangmanPicture(){
     // document.getElementById('hangmanPic').src='./images/giphy.gif'
     //images
-}
+//}
 function chekIfgameWon(){
     if(wordStatus === answer){
 document.getElementById('keyboard').innerHTML = 'You Won!!';
-//put image won
     }
 }
 
 function chekIfgameLost(){
     if(mistakes === maxWrong){
-        document.getElementById(wordSpotlight).innerHTML = 'The Answer was: ' + answer;
+        document.getElementById('wordSpotlight').innerHTML = 'The Answer was: ' + answer;
 document.getElementById('keyboard').innerHTML = 'You Lost!!';
 //put image lost
+document.getElementById('hangmanPic').src = './images/xkkkk.png';
     }
 }
 function guessedWord(){
