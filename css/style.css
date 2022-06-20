@@ -68,6 +68,5 @@ body{
     }  
 
     #hangmanPic{
-width: 360px;
-height: 300px;
+        max-width: 15%;
     }

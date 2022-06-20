@@ -1,17 +1,16 @@
 var programming_languages = [
-    "python",
-    "javascrpipt",
-    "mongodb",
-    "json",
-    "java",
-    "html",
-    "css",
     "c",
-    "csharp",
-    "golang",
+    "java",
+    "javascript",
     "php",
+    "go",
+    "python",
+    "ruby",
     "sql",
-    "ruby"
+    "csharp",
+    "swift",
+    "assembly",
+    "scratch",
 
 ]
 
@@ -51,6 +50,7 @@ function handleGuess(chosenLetter){
         //correct image
         
 //document.getElementById('hangmanPic').src = './images/goodJobgif.gif'
+
 document.getElementById('hangmanPic').src='./images/ok.png'
     }else if(answer.indexOf(chosenLetter) === -1) {
         mistakes++;
@@ -108,4 +108,6 @@ document.getElementById('maxWrong').innerHTML = maxWrong
 randomWord();
 generateButtons();
 guessedWord();
-handleGuess()
+//handleGuess()
+
+console.log(answer +"11111")
