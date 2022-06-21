@@ -70,3 +70,8 @@ body{
     #hangmanPic{
         max-width: 15%;
     }
+
+    #keyboard{
+        font-size: 35px;
+        color: #eb3941;
+    }

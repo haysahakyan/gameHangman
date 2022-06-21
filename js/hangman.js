@@ -11,7 +11,6 @@ var programming_languages = [
     "swift",
     "assembly",
     "scratch",
-
 ]
 
 let answer = '';
@@ -19,7 +18,7 @@ let maxWrong = 6;
 let mistakes = 0;
 let guessed = [];
 let wordStatus = null;
-
+//function for getting random words from arr
 function randomWord() {
     answer = programming_languages[Math.floor(Math.random() * programming_languages.length)];
 }
@@ -38,40 +37,31 @@ function generateButtons() {
 
     document.getElementById('keyboard').innerHTML = buttonsHTML
 }
+//conditions
 function handleGuess(chosenLetter){
     guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
     document.getElementById(chosenLetter).setAttribute('disabled', true);
-
-    console.log(answer)
-
+    //console.log(answer)
     if(answer.indexOf(chosenLetter) >=0 ){
         guessedWord();
         chekIfgameWon()
-        //correct image
-        
-//document.getElementById('hangmanPic').src = './images/goodJobgif.gif'
-
-document.getElementById('hangmanPic').src='./images/ok.png'
-    }else if(answer.indexOf(chosenLetter) === -1) {
-        mistakes++;
-        updateMistakes();
-        chekIfgameLost();
-        // updateHangmanPicture()
-        document.getElementById('hangmanPic').src='./images/x.png'
-    }
-    
+    document.getElementById('hangmanPic').src='./images/ok.png'
+        }else if(answer.indexOf(chosenLetter) === -1) {
+            mistakes++;
+            updateMistakes();
+            chekIfgameLost();
+            document.getElementById('hangmanPic').src='./images/x.png'
+        }
 console.log(mistakes)
 }
-//function updateHangmanPicture(){
-    // document.getElementById('hangmanPic').src='./images/giphy.gif'
-    //images
-//}
+
+// function for won
 function chekIfgameWon(){
     if(wordStatus === answer){
 document.getElementById('keyboard').innerHTML = 'You Won!!';
     }
 }
-
+//function for lost
 function chekIfgameLost(){
     if(mistakes === maxWrong){
         document.getElementById('wordSpotlight').innerHTML = 'The Answer was: ' + answer;
@@ -80,6 +70,7 @@ document.getElementById('keyboard').innerHTML = 'You Lost!!';
 document.getElementById('hangmanPic').src = './images/xkkkk.png';
     }
 }
+
 function guessedWord(){
     wordStatus = answer.split('').map(letter=> (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
 
@@ -108,6 +99,4 @@ document.getElementById('maxWrong').innerHTML = maxWrong
 randomWord();
 generateButtons();
 guessedWord();
-//handleGuess()
 
-console.log(answer +"11111")
