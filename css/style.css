@@ -1,10 +1,10 @@
 body{
     background-color: black;
-    color: aliceblue;
+    color:#e14e53
 } 
 
 #mistakes, #maxWrong{
-    color: red;
+    color: white;
     font-size: 35px;
 
 }
@@ -17,8 +17,6 @@ body{
 
 .btn-hover {
      width: 60px;
-   /* font-size: 16px;
-    font-weight: 600; */
     color: #fff;
     cursor: pointer;
     margin: 20px;
@@ -26,8 +24,6 @@ body{
     text-align:center;
     border: none;
     background-size: 300% 100%;
-
-    /* border-radius: 50px; */
     transition: all .4s ease-in-out;
 }
 
@@ -40,12 +36,12 @@ body{
     outline: none;
 }
 
-  .btn{
-    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-    }
+.btn{
+animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+transform: translate3d(0, 0, 0);
+backface-visibility: hidden;
+perspective: 1000px;
+}
 
 @keyframes shake {
     10%,
